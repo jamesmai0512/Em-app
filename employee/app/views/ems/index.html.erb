@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <div class="head">
+        <h1>Employee</h1>
+      </div>
+    </tr>
+  </thead>
+
+  <tbody>
+    <div class="employee">
+      <% @ems.each do |em| %>
+        <tr>
+          <td><%= em.name %></td>
+          <td><%= em.department %></td>
+          <td><span class="price"><%= number_to_currency(em.price) %></span></td>
+          <td><%= link_to 'Edit', edit_em_path(em) %></td>
+          <td><%= link_to 'Delete', em, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </div>
+  </tbody>
+</table>
+
+<br>
+
+
+
+<div style="text-align: center;">
+  <%= link_to 'New Employee', new_em_path %>
+</div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">

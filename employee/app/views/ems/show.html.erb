@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @em.name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @em.department %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @em.price %>
+</p>
+
+<%= link_to 'Edit', edit_em_path(@em) %> |
+<%= link_to 'Back', ems_path %>
