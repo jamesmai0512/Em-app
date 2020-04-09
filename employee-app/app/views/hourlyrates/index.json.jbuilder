@@ -1,0 +1,1 @@
+json.array! @hourlyrates, partial: "hourlyrates/hourlyrate", as :product

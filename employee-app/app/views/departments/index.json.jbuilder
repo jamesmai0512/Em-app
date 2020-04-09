@@ -1,0 +1,1 @@
+json.array! @department, partial: "departments/department", as: :department

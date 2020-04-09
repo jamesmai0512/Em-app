@@ -1,0 +1,9 @@
+<h1>Project page</h1>
+
+<% @project.each do |project| %>
+     <%= project.title %>
+    <%= project.manager %>
+    <%= project.budget %>
+    <%= project.code %>
+    <br>
+<% end %>

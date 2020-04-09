@@ -1,0 +1,9 @@
+<h1>Hourly Rate Page</h1>
+
+<% @hourlyrate.each do |hourlyrate| %>
+    <%= hourlyrate.rate %>
+<br>
+<% end %>
+
+
+<%= link_to 'New Hourly Rate', new_hourlyrate_path %>

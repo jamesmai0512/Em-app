@@ -1,0 +1,2 @@
+module HourlyratesHelper
+end
