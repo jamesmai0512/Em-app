@@ -1,0 +1,28 @@
+<h1>Project Page</h1>
+
+
+<%= form_for(@project) do |f| %>
+    <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+        <%= f.label :manager %>
+        <%= f.text_field :manager %>
+    </div>
+
+    <div class="field">
+        <%= f.label :budget %>
+        <%= f.text_field :budget %>
+    </div>
+
+    <div class="field">
+        <%= f.label :code %>
+        <%= f.text_field :code %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>

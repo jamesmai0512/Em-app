@@ -1,9 +1,10 @@
 <h1>Hourly Rate Page</h1>
 
-<% @hourlyrate.each do |hourlyrate| %>
+<%= debug @hourlyrate %>
+
+<% @hourlyrates.each do |hourlyrate| %>
     <%= hourlyrate.rate %>
+    <%= link_to 'Destroy', hourlyrate_path(hourlyrate), method: :delete, data: { confirm: 'Are you sure'} %>
 <br>
 <% end %>
 
-
-<%= link_to 'New Hourly Rate', new_hourlyrate_path %>

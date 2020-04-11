@@ -1,9 +1,14 @@
 <h1>Project page</h1>
 
 <% @project.each do |project| %>
-     <%= project.title %>
-    <%= project.manager %>
-    <%= project.budget %>
-    <%= project.code %>
-    <br>
+
+
+    <td>
+      <tr><%= project.title %> </tr>
+      <tr><%= project.manager %></tr>
+      <tr><%= project.budget %></tr>
+      <tr><%= project.code %></tr>
+      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure'} %>
+      <br>
+    </td>
 <% end %>
