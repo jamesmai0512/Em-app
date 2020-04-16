@@ -34,12 +34,24 @@ class DepartmentsController < ApplicationController
 
   def show
     # Detail page
+    @department = Department.find(params[:id])
   end
   
   def update
+    @department = Department.find(params[:id])
+    respond_to do |format|
+      if @department.update(departments_params)
+        format.html { redirect_to @department, notice: 'department was successfully updated.' }
+        format.json { render :show, status: :ok, location: @department }
+      else
+        format.html { render :edit }
+        format.json { render json: @department.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def edit
+    @department = Department.find(params[:id])
   end
 
   def destroy

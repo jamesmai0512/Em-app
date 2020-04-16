@@ -4,6 +4,8 @@
 
 <% @hourlyrates.each do |hourlyrate| %>
     <%= hourlyrate.rate %>
+    <%= link_to 'Show', hourlyrate_path(hourlyrate) %>
+    <td><%= link_to 'Edit', edit_hourlyrate_path(hourlyrate) %></td>
     <%= link_to 'Destroy', hourlyrate_path(hourlyrate), method: :delete, data: { confirm: 'Are you sure'} %>
 <br>
 <% end %>

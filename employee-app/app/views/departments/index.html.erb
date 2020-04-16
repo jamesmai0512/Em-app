@@ -4,6 +4,8 @@
 
 <% @departments.each do |department|%>
     <%= department.name %>
+    <%= link_to 'Show', department %>
+    <td><%= link_to 'Edit', edit_department_path(department) %></td>
     <%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure'} %>
     <br>
 <% end %>

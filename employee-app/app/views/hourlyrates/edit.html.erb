@@ -1,0 +1,18 @@
+<h1>Editing Hourly Rate</h1>
+
+
+<%= form_for(@hourlyrate, url: hourlyrate_path(@hourlyrate), as: :hourlyrate) do |f| %>
+    <div class="field">
+        <%= f.label :rate %>
+        <%= f.text_field :rate %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+    <%# f là một loại của form_for %>
+<% end %>
+
+
+<%= link_to 'Show', @hourlyrates_path %> |
+<%= link_to 'Back', hourlyrates_path %>

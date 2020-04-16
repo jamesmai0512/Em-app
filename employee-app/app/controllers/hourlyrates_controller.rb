@@ -4,12 +4,16 @@ class HourlyratesController < ApplicationController
     end
 
     def show
+      @hourlyrate = HourlyRate.find(params[:id])
     end
     
     def new
       @hourlyrate = HourlyRate.new
     end
-    
+
+    def edit
+      @hourlyrate = HourlyRate.find(params[:id])
+    end
     def create
       @hourlyrate = HourlyRate.new(hourlyrate_params)
         # respond_to is a Rails helper method that is attached to the Controller class.
@@ -25,6 +29,19 @@ class HourlyratesController < ApplicationController
             format.html { redirect_to hourlyrates_url, notice: 'Hourly Rate was successfully created.' }
           else
             format.html { render :new }
+        end
+      end
+    end
+    
+    def update
+      @hourlyrate = HourlyRate.find(params[:id])
+      respond_to do |format|
+        if @hourlyrate.update(hourlyrate_params)
+          format.html { redirect_to hourlyrates_path, notice: 'hourlyrate was successfully updated.' }
+          format.json { render :show, status: :ok, location: @hourlyrate }
+        else
+          format.html { render :edit }
+          format.json { render json: @hourlyrate.errors, status: :unprocessable_entity }
         end
       end
     end
