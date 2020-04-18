@@ -31,8 +31,9 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @project = Project.find(params[:id])
     respond_to do |format|
-      if @project.update(department_params)
+      if @project.update(project_params)
         format.html { redirect_to @project, notice: 'project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
@@ -44,7 +45,6 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
-
   end
 
   def destroy

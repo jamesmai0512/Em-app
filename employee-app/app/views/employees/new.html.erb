@@ -1,0 +1,20 @@
+<h1>Employee Page</h1>
+
+
+<%= form_for(@employee) do |f| %>
+
+    <div class="field">
+        <%= f.text_field :name %></br>
+        <%= f.collection_select :department_id, Department.all, :id, :name %>
+    </div>
+    <div class="field">
+        <%= f.collection_select :project_id, Project.all, :id, :code %>
+    </div>
+    <div class="field">
+        <%= f.collection_select :hourly_rate_id, HourlyRate.all, :id, :rate %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+<% end %>

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :hourlyrates
   resources :departments
   resources :projects
+  resources :employees 
 end

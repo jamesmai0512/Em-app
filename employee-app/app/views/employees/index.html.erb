@@ -1,0 +1,20 @@
+<h1>Employee Page</h1>
+
+<p id="notice"><%= notice %></p>
+
+<% @employees.each do |employee|%>
+    <td>
+    <tr><%= employee.department.name %></tr>
+    <tr><%= employee.department.id %></tr>
+    <tr><%= employee.project.manager %></tr>
+    <tr><%= employee.project.id %></tr>
+    <tr><%= employee.project.code %></tr>
+
+
+
+    <%= link_to 'Show', employee %>
+    <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+    <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure'} %>
+    <br>
+  </td>
+<% end %>
